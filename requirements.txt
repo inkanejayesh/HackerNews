@@ -3,3 +3,4 @@ gunicorn
 django-heroku
 requests
 aylien-apiclient==0.7.0
+djangorestframework
