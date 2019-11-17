@@ -2,6 +2,9 @@
 {% load staticfiles %}
 
 {% block content %}
+{% for article in articles %}
+    {{ article }}
+{% endfor %}
 
 <div class="jumbotron text-center">
   <div class="container">

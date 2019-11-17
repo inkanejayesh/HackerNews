@@ -5,9 +5,9 @@ class Greeting(models.Model):
     when = models.DateTimeField("date created", auto_now_add=True)
 
 class Article(models.Model):
-    username = models.CharField(max_length=100)
+    by = models.CharField("Username",max_length=100,null=True)
     title = models.CharField(max_length=100)
-    url = models.TextField()
+    url = models.TextField(blank=True)
     score = models.IntegerField()
     sentimentPolarity = models.CharField(max_length=100)
 
