@@ -2,4 +2,4 @@ django
 gunicorn
 django-heroku
 requests
-aylienapiclient
+aylien-apiclient==0.7.0
