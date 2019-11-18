@@ -44,9 +44,10 @@ def articlelist(request):
 
 class ArtileList(APIView):
     def get(self,request):
-        articlelist(request)
+        #articlelist(request)
         articles = Article.objects.all()
         serializer = ArticleSerializer(articles, many=True)
+        print("Hello")
         return Response(serializer.data)
 
     def post(self):

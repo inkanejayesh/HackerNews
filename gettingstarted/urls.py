@@ -18,5 +18,6 @@ urlpatterns = [
     path("", index, name="index"),
     path("db/", db, name="db"),
     path("admin/", admin.site.urls),
-    path("articles/",index)
+    path("articles/",index),
+    path("listarticles/",ArtileList.as_view())
 ]
