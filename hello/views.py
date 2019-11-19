@@ -15,7 +15,8 @@ from .models import Greeting
 # Create your views here.
 def index(request):
     # return HttpResponse('Hello from Python!')
-    return render(request, "index.html", context={"articles": Article.objects.all()})
+    x = requests.get("http://localhost:8000/listarticles").json()
+    return render(request, "articles.html", context={"articles": Article.objects.all()})
 
 
 def db(request):
@@ -30,7 +31,7 @@ def db(request):
 def articlelist(request):
     top_stories = requests.get("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty").json()
     client = textapi.Client("9cf3ddcd", "b3b1304158f0a52adc0f1f970059edc3")
-    for i in range(1):
+    for i in range(2):
         x = requests.get(
             "https://hacker-news.firebaseio.com/v0/item/" + str(top_stories[i]) + ".json?print=pretty").json()
         article = Article()
@@ -44,7 +45,7 @@ def articlelist(request):
 
 class ArtileList(APIView):
     def get(self,request):
-        #articlelist(request)
+        articlelist(request)
         articles = Article.objects.all()
         serializer = ArticleSerializer(articles, many=True)
         print("Hello")
