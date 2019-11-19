@@ -4,3 +4,4 @@ django-heroku
 requests
 aylien-apiclient==0.7.0
 djangorestframework
+django-cors-headers==3.2.0
