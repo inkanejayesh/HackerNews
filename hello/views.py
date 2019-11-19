@@ -16,7 +16,7 @@ from .models import Greeting
 def index(request):
     # return HttpResponse('Hello from Python!')
     #x = requests.get("http://localhost:8000/listarticles").json()
-    x = requests.get("https://fathomless-beach-43766.herokuapp.com/listarticles")
+    #x = requests.get("https://fathomless-beach-43766.herokuapp.com/listarticles")
     return render(request, "articles.html", context={"articles": Article.objects.all()})
 
 
@@ -46,7 +46,7 @@ def articlelist(request):
 
 class ArtileList(APIView):
     def get(self,request):
-        articlelist(request)
+        #articlelist(request)
         articles = Article.objects.all()
         serializer = ArticleSerializer(articles, many=True)
         print("Hello")
