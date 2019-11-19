@@ -15,7 +15,7 @@ from .models import Greeting
 # Create your views here.
 def index(request):
     # return HttpResponse('Hello from Python!')
-    x = requests.get("http://localhost:8000/listarticles").json()
+    x = requests.get("http://localhost:5000/listarticles").json()
     return render(request, "articles.html", context={"articles": Article.objects.all()})
 
 
